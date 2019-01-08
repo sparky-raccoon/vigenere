@@ -1,4 +1,5 @@
 var inquirer = require("inquirer");
+var utils = require("./utils.js");
 
 var questions = [
   {
@@ -28,8 +29,16 @@ var questions = [
 ]
 
 inquirer.prompt(questions).then(answers => {
-  console.log('Result ...');
-  console.log(answers);
+  let result = '';
+  switch(answers.mode) {
+    case 'encryption':
+      result = utils.encrypt(answers.sentence, answers.key);
+      break;
+    case 'decryption':
+      result = utils.decrypt(answers.sentence, answers.key);
+      break;
+  }
+  console.log(`Result: ${result}`);
 });
 
 /* const [,, ...args] = process.argv;
