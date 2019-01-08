@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/sparky-raccoon/vigenere/issues"
   },
-  "homepage": "https://github.com/sparky-raccoon/vigenere#readme"
+  "homepage": "https://github.com/sparky-raccoon/vigenere#readme",
+  "bin": {
+    "vigenere": "./cli.js"
+  },
+  "dependencies": {
+    "inquirer": "^6.2.1"
+  }
 }

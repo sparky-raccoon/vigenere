@@ -1,4 +1,38 @@
-const [,, ...args] = process.argv;
+var inquirer = require("inquirer");
+
+var questions = [
+  {
+    type: 'input',
+    name: 'sentence',
+    message: 'Type the sentence you wish to encrypt or decrypt',
+    validate: function(value) {
+      return true;
+    },
+    sentence: String
+  },
+  {
+    type: 'input',
+    name: 'key',
+    message: 'Type the key you wish to use for encryption or decryption',
+    validate: function(value) {
+      return true;
+    },
+    key: String
+  },
+  {
+    type: 'list',
+    name: 'mode',
+    message: 'Pick a mode:',
+    choices: ['encryption', 'decryption'],
+  }
+]
+
+inquirer.prompt(questions).then(answers => {
+  console.log('Result ...');
+  console.log(answers);
+});
+
+/* const [,, ...args] = process.argv;
 for (let i = 0; i < args.length; i++) {
   args[i] = args[i].toLowerCase();
 }
@@ -142,4 +176,4 @@ if (args.length === 4) {
 } else {
   console.error('There are missing arguments');
   displayHelp();
-}
+} */
