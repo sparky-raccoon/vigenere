@@ -7,18 +7,20 @@ var questions = [
     name: 'sentence',
     message: 'Type the sentence you wish to encrypt or decrypt',
     validate: function(value) {
-      return true;
-    },
-    sentence: String
+      const pass = value.match(/^[a-z]+$/i);
+      if (pass) return true;
+      else return 'Please enter a valid sentence (numbers and special characters are not allowed)';
+    }
   },
   {
     type: 'input',
     name: 'key',
     message: 'Type the key you wish to use for encryption or decryption',
     validate: function(value) {
-      return true;
-    },
-    key: String
+      const pass = value.match(/^[a-z]+$/i);
+      if (pass) return true;
+      else return 'Please enter a valid key (numbers and special characters are not allowed)';
+    }
   },
   {
     type: 'list',
