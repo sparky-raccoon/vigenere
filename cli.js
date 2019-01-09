@@ -5,7 +5,7 @@ var questions = [
   {
     type: 'input',
     name: 'sentence',
-    message: 'Type the sentence you wish to encrypt or decrypt',
+    message: 'Type the sentence you wish to encrypt or decrypt:',
     validate: function(value) {
       const pass = value.match(/^[a-z]+$/i);
       if (pass) return true;
@@ -15,7 +15,7 @@ var questions = [
   {
     type: 'input',
     name: 'key',
-    message: 'Type the key you wish to use for encryption or decryption',
+    message: 'Type the key you wish to use for encryption or decryption:',
     validate: function(value) {
       const pass = value.match(/^[a-z]+$/i);
       if (pass) return true;
