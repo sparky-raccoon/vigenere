@@ -50,6 +50,7 @@ const restoreUpperCase = (sentence, indexes) => {
 var utils = module.exports;
 
 utils.encrypt = function(sentence, key) {
+  key = key.toLowerCase();
   let indexes = saveUpperCase(sentence);
   let keyBase = getKeyBase(sentence, key);
   let res = '';
@@ -65,6 +66,7 @@ utils.encrypt = function(sentence, key) {
 }
 
 utils.decrypt = function(sentence, key) {
+  key = key.toLowerCase();
   let indexes = saveUpperCase(sentence);
   let keyBase = getKeyBase(sentence, key);
   let res = '';
