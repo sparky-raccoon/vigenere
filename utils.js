@@ -19,7 +19,7 @@ const getKeyBase = (sentence, key) => {
 
   while (sentence.length > keyBase.length) {
     keyBase += key[i];
-    if (i === key.length) i = 0;
+    if (i === key.length-1) i = 0;
     else i++;
   }
 
